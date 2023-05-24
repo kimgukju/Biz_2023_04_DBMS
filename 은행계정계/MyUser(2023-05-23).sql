@@ -146,7 +146,7 @@ WHERE buid = '0003';
 */
  SELECT * FROM tbl_buyer;
  
- SELECT * FROM tbl_buyer WHERE buname = '이몽룡'; // 이몽룡 데이터 조회하고 하라고 하셨음 << 사소한거 하나라도 놓치면 큰일남 
+ SELECT * FROM tbl_buyer WHERE buname = '이몽룡'; -- 이몽룡 데이터 조회하고 하라고 하셨음 << 사소한거 하나라도 놓치면 큰일남 
  UPDATE tbl_buyer  SET buaddr = '전라북도 익산시'  WHERE buid = '0001';
  
  SELECT * FROM tbl_buyer;
