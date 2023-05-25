@@ -90,6 +90,14 @@ SELECT substr(max(acNum),9)
 FROM tbl_acc
 WHERE substr(acNum,0,8) = '20230524';
 
+SELECT * FROM tbl_acc;
+
+COMMIT;
+
+
+
+
+
 
 
 
