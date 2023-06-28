@@ -66,6 +66,17 @@ DEFAULT TABLESPACE memo;
 
 GRANT DBA TO memo;
 
+-- shopingcart 만들기
+CREATE TABLESPACE shopingcart
+DATAFILE 'C:/app/data/shopingcart.dbf'
+SIZE 1M AUTOEXTEND ON NEXT 1K;
+
+ALTER SESSION SET "_ORACLE_SCRIPT" = true;
+
+CREATE USER shopingcart IDENTIFIED BY 12341234
+DEFAULT TABLESPACE shopingcart;
+
+GRANT DBA TO shopingcart;
 
 
 
