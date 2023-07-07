@@ -41,6 +41,32 @@ IDENTIFIED BY '88888888';
 -- CREATE USER 'todo'@'%'
 -- IDENTIFIED BY '88888888';
 
+-- 현재 등록된 사용자는 MySQL Server 에 접속할 수 있도록
+-- 권한을 가지고 있지만 그 외의 나머지 역할은 수행할 수 없다
+-- DB 생성, Table 생성 등을 수행하려면
+-- 권한을 부여해야 한다
+-- GRANT DBA TO user;
+
+-- ALL PRIVILEGES : DBA 권한
+-- *.* : 모든 Database 에 대하여 모든 역할 수행
+GRANT ALL PRIVILEGES ON *.* TO 'todo'@'localhost';
+
+-- 네트워크를 통하여 접근한 todo 사용자에게 
+-- todoDB 에 대하여 모든 권한을 부여하기
+GRANT ALL PRIVILEGES ON todoDB.* TO 'todo'@'192.168.4.%';
+
+-- todoDB Database 의 tbl_todoList Table 만 
+-- 접근하는 권한 부여
+GRANT ALL PRIVILEGES ON todoDB.tbl_todolist TO 'todo'@'192.168.4.%';
+
+GRANT CREATE, DROP, SELECT, INSERT, UPDATE, DELETE 
+ON todoDB.* 
+TO 'todo'@'192.168.4.%';
+
+DROP USER 'todo'@'192.168.4.%';
+FLUSH PRIVILEGES;
+
+
 
 
 
